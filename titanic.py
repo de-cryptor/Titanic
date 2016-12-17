@@ -53,7 +53,7 @@ alg = LogisticRegression(random_state=1)
 scores = cross_validation.cross_val_score(alg, titanic[predictors], titanic["Survived"], cv=3)
 # Take the mean of the scores (because we have one for each fold)
 #print(scores.mean())
-titanic_test = pandas.read_csv("titanic_test.csv")
+titanic_test = pandas.read_csv("test.csv")
 titanic_test["Age"] = titanic_test["Age"].fillna(titanic["Age"].median())
 titanic_test["Fare"] = titanic_test["Fare"].fillna(titanic_test["Fare"].median())
 titanic_test.loc[titanic_test["Sex"] == "male", "Sex"] = 0
